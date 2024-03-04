@@ -1,0 +1,8 @@
+.presentation header{
+    background: steelblue;
+    color: gold;
+    font-family: serif;
+}
+.presentation h1, h2{
+  font-family: monospace;
+}
