@@ -3,8 +3,22 @@
     border-radius: 10%;
     border: var(--cardBg) 5px solid;
     padding: 1em;
-    box-shadow: 0 0 15px indianred;
+    box-shadow: 0 0 15px orangered;
 }
 img{
     max-width: 100%;
+}
+.card .types{
+    display: flex;
+    flex-wrap: wrap;
+}
+.card .types img, .card .types p{
+    width: 45%;
+}
+.jauge{
+    background: lime;
+    color: black;
+    display: block;
+    border-radius: 2px;
+    padding: .1em;
 }

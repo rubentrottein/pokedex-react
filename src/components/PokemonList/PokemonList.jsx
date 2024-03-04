@@ -1,27 +1,40 @@
-import { useState } from "react";
-import { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import PokemonCard from "../PokemonCard/PokemonCard";
-export default function PokemonList(){
+import classes from "./PokemonList.module.css"
+
+export default function PokemonList() {
+    const [displayList, setDisplayList] = useState(false);
     const [dataSet, setDataSet] = useState([]);
-    useEffect(()=>{
-        (async ()=>{
-            const response = await fetch("https://pokebuildapi.fr/api/v1/pokemon")
-            let data = response.json()
-            setDataSet(data)
-        })()
-    },[])
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await fetch("https://pokebuildapi.fr/api/v1/pokemon");
+                const data = await response.json();
+                setDataSet(data);
+            } catch (error) {
+                console.error("Error fetching data:", error);
+            }
+        };
+
+        fetchData();
+    }, []);
+
     return (
         <section id="list">
-            <h2>Pokemon List</h2>
-            <article>
-                {/*
-                    dataSet.map(actualPokemon=>(<PokemonCard pokemon={""} />))
-                    <PokemonCard key={pokemon.id} pokemon={pokemon}/>
-                */}
-                <p>{
-                    console.log(dataSet[0].id)
-                }</p>
+            <h2>FULL Pokemon List</h2>
+            <button
+                onClick={()=>{ 
+                    setDisplayList(!displayList)
+                }}
+            >Afficher la liste complète des 868 pokemons</button>
+            {displayList && 
+            <article className={classes.list}>
+                {dataSet.map(pokemon => (
+                    <PokemonCard list={true} key={pokemon.id} pokemon={pokemon} />
+                ))}
             </article>
+            }
         </section>
-    )
+    );
 }

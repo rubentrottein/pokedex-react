@@ -11,7 +11,7 @@ export default function PokemonStarters(){
                     <h3>{starter.generation}</h3>
                     <aside>
                         {starter.pokemons.map(actualPokemon => 
-                            <PokemonCard key={actualPokemon.id} pokemon={actualPokemon} 
+                            <PokemonCard list={false} key={actualPokemon.id} pokemon={actualPokemon} 
                         />)}
                     </aside>
                 </article>
