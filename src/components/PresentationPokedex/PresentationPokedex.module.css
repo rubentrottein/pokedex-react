@@ -1,8 +1,25 @@
-.presentation header{
+.presentation{
     background: steelblue;
     color: gold;
     font-family: serif;
+    padding: 1em;
 }
-.presentation h1, h2{
+.presentation h1, .presentation h2{
   font-family: monospace;
+}
+h1{
+  text-align: center;
+  font-size: 1.1em;
+  font-weight: 100;
+}
+h2, h3{
+  margin: 1em auto;
+}
+form{
+  margin-top: 1em;
+  text-align: right;
+  display: flex;
+  gap: 1em;
+  justify-content: flex-end;
+  align-items: center;
 }

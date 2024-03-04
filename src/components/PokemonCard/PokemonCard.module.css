@@ -1,0 +1,10 @@
+.card {
+    width:25vw;
+    border-radius: 10%;
+    border: var(--cardBg) 5px solid;
+    padding: 1em;
+    box-shadow: 0 0 15px indianred;
+}
+img{
+    max-width: 100%;
+}
