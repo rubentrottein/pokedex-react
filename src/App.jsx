@@ -10,7 +10,11 @@ function App() {
     <>
       <PresentationPokedex />
       <aside>
-        <PokemonSearch />
+        {
+          /*wip
+          <PokemonSearch />
+          */
+        }
       </aside>
       <main>
         <PokemonStarters />
